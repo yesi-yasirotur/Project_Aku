@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Administrator</h2>
+        <img src="me.jpeg" alt="sidebar">
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-edit"></i> Posts</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Users</a></li>
+            <li><a href="#"><i class="fas fa-comments"></i> Comments</a></li>
+            <li><a href="#"><i class="fas fa-chart-line"></i> Analytics</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Welcome, Yasirotur Rahmah</h1>
+            <p>Overview of your dashboard activities.</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="card">
+                <i class="fas fa-file-alt"></i>
+                <h3>Total Posts</h3>
+                <p>120</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-eye"></i>
+                <h3>Total Visitors</h3>
+                <p>5300</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-comment-dots"></i>
+                <h3>Total Comments</h3>
+                <p>340</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-thumbs-up"></i>
+                <h3>Total Likes</h3>
+                <p>1800</p>
+            </div>
+        </div>
+
+        <h2>Recent Posts</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Learning HTML</td>
+                    <td>Admin</td>
+                    <td>8 October 2024</td>
+                    <td>
+                        <button class="edit-btn"><i class="fas fa-edit"></i>edit</button>
+                        <button class="delete-btn"><i class="fas fa-trash"></i>delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Learning JavaScript</td>
+                    <td>Admin</td>
+                    <td>12 October 2024</td>
+                    <td>
+                        <button class="edit-btn"><i class="fas fa-edit"></i>edit</button>
+                        <button class="delete-btn"><i class="fas fa-trash"></i>delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="add-btn"><i class="fas fa-plus"></i> Add New Post</button>
+    </div>
+</body>
+</html>

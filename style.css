@@ -1,0 +1,202 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: #20436d;
+    color: white;
+    padding: 5px 0;
+    text-align: center;
+}
+
+img {
+    width: 200px;   /* Ubah ukuran lebar gambar */
+    height: 200;   /* Menjaga aspek rasio */
+    border-radius: 50%;  /* Membuat sudut gambar melengkung hingga menjadi lingkaran */
+    margin-bottom:30px;
+    object-fit: cover;
+    border: 2px solid rgb(238, 239, 244); /* Tambahkan border pada gambar */
+    justify-content: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+
+
+/* Section dasar */
+section {
+    padding: 40px 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+/* Section about me */
+.about_me-section {
+    background-color: #7886a3;
+    text-align: center;
+}
+
+.about_me-section p {
+    font-size: 1.2em;
+}
+
+/* Section Tentang Saya */
+.Biodata_diri-section {
+    background-color: #b7c4de;
+    text-align: left;
+}
+
+.Biodata_diri-section p {
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #e7f3fe;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1 1 250px; /* Flex item with minimum width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+       
+}
+
+
+.persegi {
+    width: 400px;
+    height: 180px;
+    border-radius: 0%;
+    object-fit: cover; /* Gambar tetap proporsional tanpa distorsi */
+}
+
+/* Styling untuk section dan judul */
+#Achievement {
+    margin: 20px;
+    padding: 20px;
+    background-color: #9eaac8; /* Warna latar belakang */
+    border-radius: 8px; /* Membuat sudut-sudut membulat */
+    box-shadow: 0 4px 8px rgba(197, 194, 241, 0.1); /* Efek bayangan */
+    margin-bottom: 30px;
+}
+
+#Achievement h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Styling untuk tabel */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Menghapus jarak antar border */
+    margin-bottom: 40px;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling untuk header tabel */
+th {
+    background-color: #485dae; /* Warna latar belakang header */
+    color: white; /* Warna teks */
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd; /* Garis bawah */
+}
+
+/* Styling untuk baris dan kolom tabel */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* Styling untuk memperbaiki tampilan mobile */
+@media screen and (max-width: 600px) {
+    table, th, td {
+        display: block; /* Mengubah tabel menjadi format block */
+        width: 100%; /* Mengatur lebar 100% */
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
+
+    th {
+        text-align: left;
+    }
+
+    td {
+        text-align: left;
+        padding-left: 50%; /* Membuat teks menjorok */
+        position: relative;
+    }
+
+    td:before {
+        content: attr(data-label); /* Menambahkan label */
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+    }
+}
+
+/* Section pendidikan */
+.Pendidikan-section {
+    background-color: #8da3be;
+    text-align: left;
+}
+
+.Pendidikan-section a {
+    color: #2a2b2c;
+    text-decoration: none;
+}
+
+.Pendidikan-section a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer p {
+    margin: 0;
+}
