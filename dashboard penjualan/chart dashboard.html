@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css"> crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Administrator</h2>
+        <img src="me.jpeg" alt="sidebar">
+        <ul>
+            <li><a href="#"><span class="fas fa-home fs-5 "></span> Dashboard</a></li>
+            <li><a href="#"><span class="fas fa-solid fa-store fs-5"></span> Menu penjualan</a></li>
+            <li><a href="#"><span class="fas fa-solid fa-money-bill fs-5"></span> Menu Pembelian</a></li>
+            <li><a href="#"><span class="fas fa-solid fa-landmark fs-5"></span> Inventory</a></li>
+            <li><a href="#"><span class="fas fa-cog"></span> Settings</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Welcome, Yasirotur Rahmah</h1>
+            <p>Overview of your dashboard activities.</p>
+        
+    
+    <div class="container">
+        <h1>Laporan Penjualan</h1>
+        <!-- Tabel Data -->
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2"></th>
+                    <th colspan="12">Bulan</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr><th></th><th>Januari</th><th>Februari</th><th>Maret</th><th>April</th><th>Mei</th><th>Juni</th><th>Juli</th><th>Agustus</th><th>September</th><th>Oktober</th><th>November</th><th>Desember</th></tr>
+                <tr><td>2022</td><td>4.017</td><td>6.135</td><td>7.091</td><td>5.841</td><td>5.036</td><td>4.547</td><td>3.467</td><td>3.970</td><td>6.313</td><td>3.595</td><td>9.207</td><td>5.945</td></tr>
+                <tr><td>2023</td><td>2.416</td><td>4.136</td><td>7.935</td><td>8.004</td><td>9.505</td><td>5.026</td><td>6.108</td><td>6.343</td><td>9.404</td><td>9.280</td><td>9.287</td><td>8.689</td></tr>
+                
+            </tbody>
+        </table>
+
+        <!-- Grafik -->
+        <canvas id="salesChart"></canvas>
+    </div>
+
+    <script>
+        // Data Grafik
+        const data = {
+            labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+            datasets: [
+                {
+                    label: '2022',
+                    data: [4017, 6135, 7091, 5841, 5036, 4547, 3467, 3970, 6313, 3595, 9207, 5945],
+                    backgroundColor: 'rgba(54, 25, 23, 0.6)',
+                    borderColor: 'rgba(54, 25, 23, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: '2023',
+                    data: [2416, 4136, 7935, 8004, 9505, 5026, 6108, 6343, 9404, 9280, 9287, 8689],
+                    backgroundColor: 'rgba(255, 25,150, 0.6)',
+                    borderColor: 'rgba(255, 25, 150, 1)',
+                    borderWidth: 1
+                }
+            ]
+        };
+
+        // Konfigurasi Grafik
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        // Render Grafik
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        new Chart(ctx, config);
+    </script>
+</div>
+</header>
+</body>
+</html>
