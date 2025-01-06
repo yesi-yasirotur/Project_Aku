@@ -28,8 +28,19 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <img src="yesi.jpeg" alt="yesi" class="bulat"/>
+            <img src="i'm.jpeg" alt="yesi" class="bulat"/>
             <h1>YASIROTUR RAHMAH</h1>
+            <div class="container">
+                <h2></h2>
+                <div class="filter-buttons">
+                    <button onclick="scrollToSection('Biodata_diri')">Biodata diri</button>
+                    <button onclick="scrollToSection('projects')">Projects</button>
+                    <button onclick="scrollToSection('Achievement')">Achievements</button>
+                    <button onclick="scrollToSection('Pendidikan')">Pendidikan</button>
+                    <button onclick="scrollToSection('Gallery')">Gallery</button>
+                    <button onclick="scrollToSection('contact_me')">Contact Me</button>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -43,7 +54,7 @@
 
     <!-- Section biodata diri -->
     <section id="Biodata_diri" class="Biodata_diri-section">
-        <div class="container">
+        <div class="container" data-category="Biodata_diri">
             <h2>Biodata diri</h2>
             <p>Nama: Yasirotur Rahmah</p>
             <p>Tempat, Tgl_lahir: Sumenep, 30 Maret 2003</p>
@@ -58,7 +69,7 @@
 
     <section id="projects">
         <h2>Projects</h2>
-        <div class="project-list">
+        <div class="project-list" data-category="Project">
             <!-- Project 1 -->
             <div class="project-card">
                 <h3>form login</h3>
@@ -68,7 +79,7 @@
             </div>
 
             <!-- Project 2 -->
-            <div class="project-card">
+            <div class="project-card" data-category="Project">
                 <h3>Kalkulator</h3>
                 <img src="kalkulator.png" alt="projek 2" class="persegi">
                 <p>"This project is a digital calculator that allows users to perform basic calculations easily and quickly. With a simple and intuitive interface, this calculator supports operations such as addition, subtraction, multiplication, and division."</p>
@@ -76,7 +87,7 @@
             </div>
 
             <!-- Project 3 -->
-            <div class="project-card">
+            <div class="project-card" data-category="Project">
                 <h3>Dashboard</h3>
                 <img src="dashboard.png" alt="projek 3" class="persegi">
                 <p>"This project consists of a dashboard page that displays important statistics, such as total comments, total posts, and total likes. The responsive design ensures a good appearance across various devices."</p>
@@ -84,14 +95,14 @@
             </div>
 
             <!-- Project 4 -->
-            <div class="project-card">
+            <div class="project-card" data-category="Project">
                 <h4>Game Ular</h4>
                 <img src="game ular.png" alt="project 4" class="persegi">
                 <p>"This project is a simple snake game animation"</p>
                 <a href="Game uler\uler.html" target="_blank" class="button">View Project</a>
             </div>
             <!-- Project 5 -->
-            <div class="project-card">
+            <div class="project-card" data-category="Project">
                 <h5>Chart Dashboard</h5>
                 <img src="chart dasboard.png" alt="projek 5" class="persegi">
                 <p>"This project is a dashboard with annual sales diagram."</p>
@@ -100,9 +111,9 @@
         </div>
     </section>
 
-    <section id="Achievement">
+    <section id="Achievement" data-category="achievement">
         <h2>Achievement</h2>
-        <table border="1">
+        <table border="1" class="achievement-card">
             <tr>
                 <th>Achievement Name</th>
                 <th>Certificate link</th>
@@ -133,16 +144,46 @@
 
     <!-- Section Pendidikan -->
     <section id="Pendidikan" class="Pendidikan-section">
-        <div class="container">
+        <div class="container" data-category="Pendidikan">
             <h2>Pendidikan</h2>
             <p>MA Annuqayah   2019</p>
             <p>S1 Teknik Informatika Universitas Pamulang  2022</p>       
         </div>
     </section>
 
+    <!-- Section Gallery -->
+<section id="Gallery" class="gallery-section">
+    <div class="container" data-category="Gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <!-- Foto 1 -->
+            <div class="gallery-item">
+                <img src="me.jpeg" alt="Foto 1" class="gallery-img">
+                <p>look around for a moment to understand the surroundings</p>
+            </div>
+            <!-- Foto 2 -->
+            <div class="gallery-item">
+                <img src="finger.jpeg" alt="Foto 2" class="gallery-img">
+                <p> sometimes you have to close your eyes to see</p>
+            </div>
+            <!-- Foto 3 -->
+            <div class="gallery-item">
+                <img src="yes.jpeg" alt="Foto 3" class="gallery-img">
+                <p>love your self</p>
+            </div>
+            <!-- Foto 4 -->
+            <div class="gallery-item">
+                <img src="yesi.jpeg" alt="Foto 4" class="gallery-img">
+                <p>occasionally lift your head so as not to be given feet</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
     <!-- Section Contact Me -->
     <section id="contact_me">
-        <div class="container">
+        <div class="container" data-category="contact_me">
             <h2>Contact Me</h2>
             <p>Email: <a href="mail to:yasiraturrahmah@gmail.com">yasiraturrahmah@gmail.com</a></p>
             <p>Alamat: jl. Bukit Pamulang Indah C13 no.8, Pamulang Timur, Pamulang-Tangerang Selatan</p>
@@ -165,6 +206,53 @@
             <p>&copy; 2024 Yasirotur Rahmah. Semua hak dilindungi.</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <!-- Inline JavaScript -->
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+                // Tambahkan efek sorotan
+                section.style.transition = 'background-color 0.3s';
+                section.style.backgroundColor = '#f0f8ff'; // Warna sorotan sementara
+                setTimeout(() => {
+                    section.style.backgroundColor = ''; // Kembali ke warna semula
+                }, 1000); // Hapus sorotan setelah 1 detik
+            }
+        }
+        
+        function filterCategory(category) {
+            // Mengambil semua elemen project-card dan achievement-card
+            var projectCards = document.querySelectorAll('.project-card');
+            var achievementCards = document.querySelectorAll('.achievement-card');
+
+            // Menyembunyikan semua kartu terlebih dahulu
+            projectCards.forEach(function(card) {
+                card.style.display = 'none';
+            });
+            achievementCards.forEach(function(card) {
+                card.style.display = 'none';
+            });
+
+            // Menampilkan kartu berdasarkan kategori yang dipilih
+            if (category === 'all') {
+                projectCards.forEach(function(card) {
+                    card.style.display = 'block'; // Menampilkan proyek
+                });
+                achievementCards.forEach(function(card) {
+                    card.style.display = 'block'; // Menampilkan pencapaian
+                });
+            } else if (category === 'project') {
+                projectCards.forEach(function(card) {
+                    card.style.display = 'block'; // Menampilkan hanya proyek
+                });
+            } else if (category === 'achievement') {
+                achievementCards.forEach(function(card) {
+                    card.style.display = 'block'; // Menampilkan hanya pencapaian
+                });
+            }
+        }
+    </script>
+
 </body>
 </html>
