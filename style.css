@@ -189,6 +189,25 @@ td {
     text-decoration: underline;
 }
 
+#contact_me {
+    background-color: #b4ccf1;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#contact_me .container {
+    text-align: center;
+}
+
+#contact_me h2 {
+    margin-bottom: 20px;
+}
+
+#contact_me iframe {
+    margin-top: 10px;
+    border: none;
+}
+
 /* Footer */
 footer {
     background-color: #333;
